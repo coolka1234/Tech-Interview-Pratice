@@ -3,8 +3,6 @@
  int maxOfArray(const int* A, int size)
  {
     int max=A[0];
-    int size_A=sizeof(A);
-    int size_int=sizeof(int);
     for (int i=0;i<size; i++)
     {
         if(max<A[i])
