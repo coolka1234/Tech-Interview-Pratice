@@ -28,15 +28,19 @@
 
 // Expected Time Complexity: O(1)
 // Expected Auxiliary Space: O(1)
-class Multi_Table {
+class multi_table {
     public static void main(String[] args) {
-        print_multiples(9)
-    }
-    public static void print_multiples(Int n){
-        int[]=new int[10]
-        for (Int i=1;i<=10;i++){
-            int[i-1]=n*i;
+        int[] table=print_multiples(9);
+        for (int elem : table) {
+            System.out.println(elem);
         }
-        return
+
+    }
+    public static int[] print_multiples(int n){
+        int[] table = new int[10];
+        for (int i=1;i<=10;i++){
+            table[i-1]=n*i;
+        } 
+        return table;
     }
 }
