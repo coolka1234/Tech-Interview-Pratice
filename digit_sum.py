@@ -26,7 +26,6 @@
 
 # Constraints:
 # 1 <= n <= 109
-from xml.etree.ElementTree import tostring
 
 
 def sum_digist(num):
@@ -40,11 +39,11 @@ def sum_digist(num):
 def palindrome_digi_check(num)->bool:
     num_sum=sum_digist(num)
     array_num_sum=str(num_sum)
-    for i in range(0,int(len(array_num_sum)/2)-1):
-        if array_num_sum[i]!=array_num_sum[len(array_num_sum)-i]:
+    for i in range(0,int(len(array_num_sum)/2)):
+        if array_num_sum[i]!=array_num_sum[len(array_num_sum)-i-1]:
             return False
     return True
 
 if __name__=='__main__':
-    print(sum_digist(153))
-    print(palindrome_digi_check(1531))
+    print(sum_digist(1531))
+    print(palindrome_digi_check(153))
