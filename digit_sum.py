@@ -45,5 +45,5 @@ def palindrome_digi_check(num)->bool:
     return True
 
 if __name__=='__main__':
-    print(sum_digist(1531))
-    print(palindrome_digi_check(153))
+    print(sum_digist(1982376892))
+    print(palindrome_digi_check(1982376892))
