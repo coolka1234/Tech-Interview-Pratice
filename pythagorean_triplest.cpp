@@ -7,6 +7,7 @@
 // Examples
 
 // One such triple is 3, 4, 5. For this challenge, you would be given the value 60 as the argument to your function, and then it would return the Pythagorean triplet in an array [3, 4, 5] which is returned in increasing order. 3^2 + 4^2 = 5^2 since 9 + 16 = 25 and then their product (3 * 4 * 5) is 60.
+//CAN BE GREATLY IMPROVED! 
 #include <iostream>
 #include <math.h>
 #include <vector>
