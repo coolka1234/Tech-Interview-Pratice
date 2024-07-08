@@ -12,3 +12,17 @@
 
 // Expected Time Complexity: O(n)
 // Expected Auxiliary Space: O(n)
+
+
+class key_pair{
+    public static void main(){
+
+    }
+    public static Boolean sum_exists(int arr[], int sum){
+        int copy[]=arr;
+        for (int i=0;i<arr.length;i++){
+
+        }
+        return false;
+    }
+}
