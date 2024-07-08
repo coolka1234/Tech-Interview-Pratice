@@ -15,13 +15,13 @@
 std::vector<int> triplet(int num){
     std::vector<int> triplets={1,1,1};
     int sum=num;
-    for (int i=1;i<num;i++){
-        for(int j=1;j<num;j++){
-            for(int k=1;k<num;k++){
+    for (int i=1;i<num/2;i++){
+        for(int j=1;j<num/2;j++){
+            for(int k=1;k<num/2;k++){
                 // std::cout<<i<<j<<k<<std::endl;
-                if(pow(i,2)+pow(j,2)==pow(k,2) && (i * j * k)==num){
+                if(pow(k,2)+pow(j,2)==pow(i,2) && (i * j * k)==num){
                     // std::cout<<"found triplet";
-                    return (triplets={i,j,k});
+                    return (triplets={k,i,j});
                 }
             }
         }
@@ -30,9 +30,9 @@ std::vector<int> triplet(int num){
 
 }
 int main(){
-    std::vector<int> result=triplet(60); 
-    std::cout<<result[0];
-    std::cout<<result[1];
-    std::cout<<result[2];
+    std::vector<int> result=triplet(2040); 
+    std::cout<<result[0]<<" ";
+    std::cout<<result[1]<<" ";
+    std::cout<<result[2]<<" ";
     return 0;
 }
