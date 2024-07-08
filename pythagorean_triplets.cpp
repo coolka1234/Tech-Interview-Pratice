@@ -16,8 +16,8 @@ std::vector<int> triplet(int num){
     std::vector<int> triplets={1,1,1};
     int sum=num;
     for (int i=1;i<num/2;i++){
-        for(int j=1;j<num/2;j++){
-            for(int k=1;k<num/2;k++){
+        for(int j=1;j<=i;j++){
+            for(int k=1;k<=i;k++){
                 // std::cout<<i<<j<<k<<std::endl;
                 if(pow(k,2)+pow(j,2)==pow(i,2) && (i * j * k)==num){
                     // std::cout<<"found triplet";
