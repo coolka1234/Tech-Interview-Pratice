@@ -16,20 +16,20 @@
 // Constraints:
 // -105 ≤ n ≤ 105
 #include <iostream>
-void print_pattern(int number, int orginal_number, bool first_iter){
+void print_pattern(int number, int orginal_number, bool first_iter, bool ifFlipped){
     if (number==orginal_number && !first_iter){
         std::cout<<number<<" ";
         return;
     }
     std::cout<<number<<" ";
-    if (number>0){
-        print_pattern(number-5, orginal_number=orginal_number, first_iter=false);
+    if (number>0 && !ifFlipped){
+        print_pattern(number-5, orginal_number=orginal_number, first_iter=false, ifFlipped=false);
     }
     else{
-      print_pattern(number+5, orginal_number=orginal_number, first_iter=false);  
+      print_pattern(number+5, orginal_number=orginal_number, first_iter=false, ifFlipped=true);  
     }
 }
 int main(){
-    print_pattern(16, 16, true);
+    print_pattern(16, 16, true, false);
     return 0;
 }
