@@ -20,6 +20,7 @@ class key_pair{
         System.out.println(sum_exists(array,14));
 
     }
+    //not optimal - n^2!
     public static Boolean sum_exists(int arr[], int sum){
         int copy[]=arr;
         for (int i=0;i<arr.length;i++){
