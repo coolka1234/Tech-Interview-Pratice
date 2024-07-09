@@ -12,12 +12,14 @@
 
 // Expected Time Complexity: O(n)
 // Expected Auxiliary Space: O(n)
-
+import java.util.HashSet;
 
 class key_pair{
     public static void main(String args[]){
         int[] array={1,4,45,6,10,8};
-        System.out.println(sum_exists(array,14));
+        // System.out.println(sum_exists(array,14));
+        System.out.println(sum_exists_hash(array,14));
+        
 
     }
     //not optimal - n^2!
@@ -30,6 +32,17 @@ class key_pair{
                     return true;
                 }
             }
+        }
+        return false;
+    }
+    public static Boolean sum_exists_hash(int arr[], int sum){
+        HashSet<Integer> hset= new  HashSet<>(); 
+        for (int num : arr){
+            int result=sum-num;
+            if (hset.contains(result)){
+                return true;
+            }
+            hset.add(num);
         }
         return false;
     }
