@@ -15,18 +15,19 @@
 
 // Constraints:
 // -105 ≤ n ≤ 105
+// could be optimized
 #include <iostream>
-void print_pattern(int number, int orginal_number, bool first_iter, bool ifFlipped){
+void print_pattern(int number, int orginal_number, bool first_iter, bool hasFlipped){
     if (number==orginal_number && !first_iter){
         std::cout<<number<<" ";
         return;
     }
     std::cout<<number<<" ";
-    if (number>0 && !ifFlipped){
-        print_pattern(number-5, orginal_number=orginal_number, first_iter=false, ifFlipped=false);
+    if (number>0 && !hasFlipped){
+        print_pattern(number-5, orginal_number=orginal_number, first_iter=false, hasFlipped=false);
     }
     else{
-      print_pattern(number+5, orginal_number=orginal_number, first_iter=false, ifFlipped=true);  
+      print_pattern(number+5, orginal_number=orginal_number, first_iter=false, hasFlipped=true);  
     }
 }
 int main(){
