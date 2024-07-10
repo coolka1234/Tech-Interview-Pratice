@@ -63,8 +63,15 @@ class distinct_matrixes {
                     }
                 }
             }
-            first=false;
-            set_of_num=next_sum;
+            if (first)
+            {
+                next_sum=set_of_num;
+                first=false;
+            }
+            else{
+                set_of_num=next_sum;
+                next_sum=new HashSet<>();
+            }
         }
         return set_of_num.size();
     }

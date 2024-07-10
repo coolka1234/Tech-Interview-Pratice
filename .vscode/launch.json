@@ -2,6 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "distinct_matrixes",
+            "request": "launch",
+            "mainClass": "distinct_matrixes",
+            "projectName": "Interview Practice_f74af6ec"
+        },
+        {
             "name": "C/C++: g++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
