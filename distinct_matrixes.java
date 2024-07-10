@@ -40,7 +40,8 @@ class distinct_matrixes {
     public static void main(String args[]) {
         int[][] matrix={
       {12, 1, 14, 3, 16},
-      {14, 2, 1, 3, 35},{14, 1, 14, 3, 11},
+      {14, 2, 1, 3, 35},
+      {14, 1, 14, 3, 11},
       {14, 5, 3, 2, 1},
       {1, 18, 3, 21, 14}};
       System.out.println(is_distinc(matrix));
@@ -49,6 +50,7 @@ class distinct_matrixes {
 
     public static int is_distinc(int[][] matrix) {
         HashSet<Integer> set_of_num = new HashSet<>();
+        HashSet<Integer> next_sum=new HashSet<>();
         boolean first=true;
         for (int[] list : matrix) {
             for (int element : list) {
@@ -56,12 +58,13 @@ class distinct_matrixes {
                     set_of_num.add(element);
                 }
                 else{
-                    if(!set_of_num.contains(element)){
-                        set_of_num.remove(element);
+                    if(set_of_num.contains(element)){
+                        next_sum.add(element);
                     }
                 }
             }
             first=false;
+            set_of_num=next_sum;
         }
         return set_of_num.size();
     }
