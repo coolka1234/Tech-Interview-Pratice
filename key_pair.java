@@ -35,6 +35,7 @@ class key_pair{
         }
         return false;
     }
+    //optimal - linear
     public static Boolean sum_exists_hash(int arr[], int sum){
         HashSet<Integer> hset= new  HashSet<>(); 
         for (int num : arr){

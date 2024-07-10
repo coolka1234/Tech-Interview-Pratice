@@ -34,3 +34,35 @@
 // Constraints:
 // 1 ≤ N ≤ 100
 // 1 ≤ M[i][j] ≤ 1000
+import java.util.HashSet;
+
+class distinct_matrixes {
+    public static void main(String args[]) {
+        int[][] matrix={
+      {12, 1, 14, 3, 16},
+      {14, 2, 1, 3, 35},{14, 1, 14, 3, 11},
+      {14, 5, 3, 2, 1},
+      {1, 18, 3, 21, 14}};
+      System.out.println(is_distinc(matrix));
+
+    }
+
+    public static int is_distinc(int[][] matrix) {
+        HashSet<Integer> set_of_num = new HashSet<>();
+        boolean first=true;
+        for (int[] list : matrix) {
+            for (int element : list) {
+                if (first){
+                    set_of_num.add(element);
+                }
+                else{
+                    if(!set_of_num.contains(element)){
+                        set_of_num.remove(element);
+                    }
+                }
+            }
+            first=false;
+        }
+        return set_of_num.size();
+    }
+}
