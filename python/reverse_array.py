@@ -23,18 +23,27 @@
 # 1 <= d <= 106
 # 0 <= arr[i] <= 105
 def reverse_array(array, num_of_rotations):
-   last_index=len(array)-1
-   copied_elem=array[len(array)-1]
-   for index, elem in reversed(list(enumerate(array))):
-        if index<=num_of_rotations:
-            array[last_index-(index-num_of_rotations)]
+    last_index=len(array)-1
+    copied_elem=array[last_index]
+    for index, elem in reversed(list(enumerate(array))):
+        if index<num_of_rotations:
+            array[last_index-(index+num_of_rotations)]
         else:
             remembered_elem=array[index-1]
             array[index-1]=copied_elem
             copied_elem=remembered_elem
+    return array
 
+def reverse_array_2(array, num):
+    size=len(array)
+    for i in (range(len(array))):
+        if(i-num)>=0:
+            array[i-num], array[i]=array[i], array[i-num]
+        # if (i<num):
+        #     array[size-i-1]=array[i]
+    return array
 
 
 
 if __name__=='__main__':
-    reverse_array()
+    print(reverse_array_2([1,2,3,4,5], 2))
