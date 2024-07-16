@@ -37,8 +37,10 @@ def reverse_array(array, num_of_rotations):
 def reverse_array_2(array, num):
     size=len(array)
     for i in (range(len(array))):
-        if(i-num)>=0:
-            array[i-num], array[i]=array[i], array[i-num]
+        move=(i-num)
+        if move<0:
+            move=move+size 
+        array[move], array[i]=array[i], array[move]
         # if (i<num):
         #     array[size-i-1]=array[i]
     return array
@@ -47,3 +49,5 @@ def reverse_array_2(array, num):
 
 if __name__=='__main__':
     print(reverse_array_2([1,2,3,4,5], 2))
+    
+# Output: 3 4 5 1 2
