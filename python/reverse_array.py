@@ -29,8 +29,9 @@ def reverse_array(array, num_of_rotations):
         if index<=num_of_rotations:
             array[last_index-(index-num_of_rotations)]
         else:
+            remembered_elem=array[index-1]
             array[index-1]=copied_elem
-            copied_elem=array[index-1]
+            copied_elem=remembered_elem
 
 
 
