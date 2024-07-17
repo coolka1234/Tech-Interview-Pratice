@@ -43,6 +43,7 @@ def reverse_array_2(array, num):
         array[move], array[i]=array[i], array[move]
         # if (i<num):
         #     array[size-i-1]=array[i]
+        # ret
     return array
 
 
