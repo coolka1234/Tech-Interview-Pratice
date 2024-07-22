@@ -32,16 +32,33 @@
 
 # Your Task:
 # The task is to complete the function stockBuySell() which takes an array of A[] and N as input parameters and finds the days of buying and selling stock. The function must return a 2D list of integers containing all the buy-sell pairs i.e. the first value of the pair will represent the day on which you buy the stock and the second value represent the day on which you sell that stock. If there is No Profit, return an empty list. 
-from tkinter.tix import INTEGER
 
-
-def analyze_stock(stocks):
-    best_so_far =0
-    max = stocks[0]
-    min=stocks[0]
-    for stock in stocks:
-
-
-if __name__=="__main__":
+def stockBuySell(A, N):
+    result = []
     
-    analyze_stock()
+    i = 0
+    while i < (N - 1):
+        
+        while (i < N - 1) and (A[i + 1] <= A[i]):
+            i += 1
+        
+        if i == N - 1:
+            break
+        buy = i
+        i += 1
+        
+        while (i < N) and (A[i] >= A[i - 1]):
+            i += 1
+        
+        sell = i - 1
+        
+        result.append((buy, sell))
+    
+    if not result:
+        return []
+    else:
+        return result
+
+N = 7
+A = [100,180,260,310,40,535,695]
+print(stockBuySell(A, N))
