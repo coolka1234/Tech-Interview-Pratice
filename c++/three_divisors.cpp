@@ -30,10 +30,20 @@
 
 // Your Task:  
 // You don't need to read input or print anything. Your task is to complete the function threeDivisors() which takes an integer q and a list of integer of size q as input parameter and returns the list containing the count of the numbers having exactly 3 divisors for each query.
-#include <iostream>
-void output_threes(){
+// Expected Time Complexity: O(q*N*log(log(N)))
+// Expected Auxiliary Space: O(N), where N is min(10^6,N)
 
+#include <iostream>
+#include <math.h>
+void output_threes(int* queries, int size){
+    for(int i=0;i<size;i++){
+        int N=queries[i];
+        int primes[N];
+        for(int j=0;j<sqrt(N);j++){
+            
+        }
+    }    
 }
 int main(){
-    
+   return 0; 
 }
