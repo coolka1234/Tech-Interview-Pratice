@@ -36,12 +36,21 @@
 #include <iostream>
 #include <math.h>
 void output_threes(int* queries, int size){
+    int counter_of_non_primes=0;
     for(int i=0;i<size;i++){
         int N=queries[i];
-        int primes[N];
-        for(int j=0;j<sqrt(N);j++){
-            
+        bool primes[int(sqrt(N))]={true};
+        for(int j=2;j<sqrt(N);j++){
+           int k=1;
+           while(k*j<=sqrt(N)){
+            if(primes[(k*j)-1]){
+                primes[(k*j)-1]=false;
+                counter_of_non_primes++;
+            }
+           }
         }
+        int num_of_primes=N-counter_of_non_primes;
+
     }    
 }
 int main(){
