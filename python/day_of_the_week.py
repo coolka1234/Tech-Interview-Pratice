@@ -73,12 +73,8 @@ def day_of_the_week(d, m, y):
             return "Saturday"
         case 1:
             return "Sunday"
-    
- 
-    
-    
-    
+        
 
 if __name__=="__main__":
-    print(day_of_the_week(30,8,2010))
-    print(day_of_the_week(28,12,1998))
+    print(day_of_the_week(9,7,1676))
+    print(day_of_the_week(28,12,1995))
