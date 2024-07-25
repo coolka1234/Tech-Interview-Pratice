@@ -55,7 +55,7 @@ void output_threes(int* queries, int size){
 }
 int* sieve(int n){
     int upto=ceil(sqrt(n));
-    static int numbers[upto];
+    int numbers[upto];
     for (int i=1;i<=upto;i++){
         numbers[i-1]=i;
     }
@@ -77,23 +77,7 @@ void output_threes_2(int* query, int q){
         std::cout<<numbers[6];
     }
 }
-// int* sieve(int n){
-//     int upto=ceil(sqrt(n));
-//     int numbers[upto];
-//     for (int i=1;i<=upto;i++){
-//         numbers[i-1]=i;
-//     }
-//     for (int i=2;i<upto;i++){
-//         int num=numbers[i];
-//         if(num!=0){
-//             for(int j=2;j*num<=upto;j++)
-//             {
-//                 numbers[j*num-1]=0;
-//             }
-//         }
-//     }
-//     return numbers;
-// }
+
 int main(){
     int arr[2]={6000,2000};
     int q=2;
