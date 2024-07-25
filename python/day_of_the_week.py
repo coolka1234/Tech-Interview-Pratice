@@ -29,37 +29,50 @@
 # 1 <= m <= 12
 # 1 <= y <= 2100
 def day_of_the_week(d, m, y):
-    # 1.1.1 was a monday->0
-    num_of_days=365*y
+    # 1.1.1 was a monday->1
+    num_of_days=365*(y-1)
     leap_days=int(y/4)-int(y/100)+int(y/400)
     days_in_months=0
     match m:
-        case 1:
-            days_in_months=31
         case 2:
-            days_in_months=59
+            days_in_months=31
         case 3:
-            days_in_months=90
+            days_in_months=59
         case 4:
-            days_in_months=120
+            days_in_months=90
         case 5:
-            days_in_months=151
+            days_in_months=120
         case 6:
-            days_in_months=181
+            days_in_months=151
         case 7:
-            days_in_months=212
+            days_in_months=181
         case 8:
-            days_in_months=243
+            days_in_months=212
         case 9:
-            days_in_months=273
+            days_in_months=243
         case 10:
-            days_in_months=304
+            days_in_months=273
         case 11:
-            days_in_months=334
+            days_in_months=304
         case 12:
-            days_in_months=365
+            days_in_months=334
     num_of_days=num_of_days+leap_days+days_in_months+d
     result=num_of_days%7+1
+    match result:
+        case 2:
+            return "Monday"
+        case 3:
+            return "Tuesday"
+        case 4:
+            return "Wednesday"
+        case 5:
+            return "Thursday"
+        case 6:
+            return "Friday"
+        case 7:
+            return "Saturday"
+        case 1:
+            return "Sunday"
     
  
     
@@ -67,4 +80,5 @@ def day_of_the_week(d, m, y):
     
 
 if __name__=="__main__":
-    day_of_the_week(30,8,2010)
+    print(day_of_the_week(30,8,2010))
+    print(day_of_the_week(28,12,1998))
