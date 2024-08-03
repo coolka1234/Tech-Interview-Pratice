@@ -28,7 +28,17 @@ int multiply_string(string s1, string s2){
         negative_product = (signs[0]!=signs[1]);
     }
     int l1=s1.size();
-    int l2=s2.size();       
+    int l2=s2.size();
+    if (l1<l2){
+        swap(s1,s2);
+        swap(l1,l2);
+    }
+    for(int i=l1-1;i>=0;i--){
+        int first_num=s1[i];
+        for(int j=l2-1;j>=0;j--){
+
+        }        
+    }          
 }
 
 int main(){
