@@ -20,10 +20,12 @@
 
 // Your Task: You don't need to read input or print anything. Your task is to complete the function multiplyStrings() which takes two strings s1 and s2 as input and returns their product as a string.
 #include <iostream>
+#include <string>
 using namespace std;
 int multiply_string(string s1, string s2){
     char signs[2]={s1[0],s2[0]};
     bool negative_product=false;
+    string result_string;
     if(signs[0]=='-' || signs[1]=='-'){
         negative_product = (signs[0]!=signs[1]);
     }
@@ -34,10 +36,22 @@ int multiply_string(string s1, string s2){
         swap(l1,l2);
     }
     for(int i=l1-1;i>=0;i--){
-        int first_num=s1[i];
+        int first_num=s1[i]-'0';
+        int carry=0;
         for(int j=l2-1;j>=0;j--){
-
+            int second_num=s2[i]-'0';
+            int result=first_num*second_num+carry;
+            if(j==0){
+                result_string.insert(0,to_string(result));
+                break;
+            }
+            int digit=result%10;
+            result_string.insert(0,to_string(digit));
+            carry=result/10;
         }        
+    }
+    if(!negative_product){
+        result_string.insert(0,1,'-');
     }          
 }
 
