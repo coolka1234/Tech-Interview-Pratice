@@ -25,7 +25,6 @@ using namespace std;
 int multiply_string(string s1, string s2){
     char signs[2]={s1[0],s2[0]};
     bool negative_product=false;
-    string result_string;
     if(signs[0]=='-' || signs[1]=='-'){
         negative_product = (signs[0]!=signs[1]);
     }
@@ -35,6 +34,7 @@ int multiply_string(string s1, string s2){
         swap(s1,s2);
         swap(l1,l2);
     }
+    int result[l1]={0};
     for(int i=l1-1;i>=0;i--){
         int first_num=s1[i]-'0';
         int carry=0;
@@ -42,7 +42,7 @@ int multiply_string(string s1, string s2){
             int second_num=s2[i]-'0';
             int result=first_num*second_num+carry;
             if(j==0){
-                result_string.insert(0,to_string(result));
+                result_string[i];
                 break;
             }
             int digit=result%10;
