@@ -34,7 +34,7 @@ int multiply_string(string s1, string s2){
         swap(s1,s2);
         swap(l1,l2);
     }
-    int result[l1]={0};
+    int result_cumulative[l1]={0};
     for(int i=l1-1;i>=0;i--){
         int first_num=s1[i]-'0';
         int carry=0;
@@ -42,17 +42,23 @@ int multiply_string(string s1, string s2){
             int second_num=s2[i]-'0';
             int result=first_num*second_num+carry;
             if(j==0){
-                result_string[i];
+                result_cumulative[i]=result;
                 break;
             }
             int digit=result%10;
-            result_string.insert(0,to_string(digit));
+            result_cumulative[i]=digit;
             carry=result/10;
         }        
     }
+    int sum;
+    for (int i=0;i<l1;i++)
+    {
+        sum+=result_cumulative[i];
+    }
     if(!negative_product){
-        result_string.insert(0,1,'-');
+        sum*=-1;
     }          
+    return sum;
 }
 
 int main(){
