@@ -59,6 +59,7 @@ int multiply_string(string s1, string s2){
         sum*=-1;
     }          
     return sum;
+    //unfinished
 }
 
 int main(){
