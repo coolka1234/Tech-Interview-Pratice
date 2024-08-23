@@ -25,13 +25,13 @@ bool isPalindrome(std::string S){
     int size=S.size();
     for(int i=0;i<size/2;i++)
     {
-        if(S[i]!=S[i-1]){
+        if(S[i]!=S[size-(i+1)]){
             return false;
         }
     }
     return true;
 }
 int main(){
-    std::string test_s="abba";
-    std::cout<<isPalindrome(test_s)<<std:endl;
+    std::string test_s="abbac";
+    std::cout<<isPalindrome(test_s)<<std::endl;
 }
