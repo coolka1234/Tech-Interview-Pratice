@@ -38,7 +38,7 @@ int max_value(std::string S){
     std::string result_string="";
     for(int i=0;i<s_size;i++){
         int c=S[i]-'0';
-        if (c>=47 && c<=57){
+        if (c>=0 && c<=9){
             result_string+=S[i];
         }
         else{
