@@ -42,15 +42,19 @@ int max_value(std::string S){
             result_string+=S[i];
         }
         else{
-            int result=std::stoi(result_string);
-            if (result>max){
-                max=result;
+            if (result_string!=""){
+                int result=std::stoi(result_string);
+                if (result>max){
+                    max=result;
+                }
+                result_string="";
             }
-            result_string="";
         }
-    }    
+    }
+    return max;    
 }
 
 int main(){
-
+    std::string test="axvc123afas98alksjd45ksahd999ajshd1234asdddpp[]";
+    std::cout<<max_value(test)<<std::endl;
 }
