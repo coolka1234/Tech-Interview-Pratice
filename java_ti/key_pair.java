@@ -1,4 +1,4 @@
-package java;
+package java_ti;
 
 
 // Given an array arr of positive integers and another number x. Determine whether two elements exist in arr whose sum is exactly x or not.

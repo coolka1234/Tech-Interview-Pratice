@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "is_sorted",
+            "request": "launch",
+            "mainClass": "java_ti.is_sorted",
+            "projectName": "Interview Practice_f74af6ec"
+        },
+        {
+            "type": "java",
+            "name": "key_pair",
+            "request": "launch",
+            "mainClass": "java.key_pair",
+            "projectName": "Interview Practice_f74af6ec"
+        },
+        {
+            "type": "java",
+            "name": "is_sorted",
+            "request": "launch",
+            "mainClass": "java.is_sorted",
+            "projectName": "Interview Practice_f74af6ec"
+        },
+        {
+            "type": "java",
             "name": "distinct_matrixes",
             "request": "launch",
             "mainClass": "distinct_matrixes",

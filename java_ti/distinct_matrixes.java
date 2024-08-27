@@ -1,4 +1,4 @@
-package java;
+package java_ti;
 
 
 // Given a N x N matrix M. Write a program to find count of all the distinct elements common to all rows of the matrix. Print count of such elements.

@@ -16,21 +16,16 @@
 // Constraints:
 // 1 ≤ arr.size ≤ 106
 // - 109 ≤ arr[i] ≤ 109
-package java;
+package java_ti;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class is_sorted {
     public static Boolean sorted(ArrayList<Integer> arr){
         int number=arr.get(0);
-        int counter=0;
         for (Integer num : arr) {
-            if (counter==0){
-                continue;
-            }
-            else if(num>number){
+            if(num<number){
                 return false;
             }
             number=num;
@@ -38,7 +33,7 @@ public class is_sorted {
         return true;
     }
     public static void main(String args[]){
-        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,8,4,5));
         System.out.println(sorted(arr));
     }
     
