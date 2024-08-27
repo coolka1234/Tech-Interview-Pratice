@@ -21,11 +21,11 @@
 # 1 <= k <= 106
 def search(arr, k):
     for num, i in enumerate(arr, start=0):
-        if num==k:
-            return i+1
+        if i==k:
+            return num+1
     return -1
 
 if __name__=='__main__':
     arr=[9,7,16,16,4]
     k=16
-    search(arr,k)
+    print(search(arr,k))
