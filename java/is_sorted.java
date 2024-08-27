@@ -18,7 +18,9 @@
 // - 109 ≤ arr[i] ≤ 109
 package java;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class is_sorted {
     public static Boolean sorted(ArrayList<Integer> arr){
@@ -36,7 +38,8 @@ public class is_sorted {
         return true;
     }
     public static void main(String args[]){
-
+        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        System.out.println(sorted(arr));
     }
     
 }
