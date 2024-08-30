@@ -26,16 +26,28 @@
 # Constraints:
 # 1 <= N <= 1015
 
-import enum
 
 
 def reverse_digit(digit):
-   string_digit=str(digit) 
-   index=len(string_digit)-1
-   for letter in string_digit:
-        
-       
+    string_digit=str(digit) 
+    index=len(string_digit)-1
+    trailing=True
+    i=0
+    length=len(string_digit)/2
+    while index>=length:
+        letter=string_digit[index]
+        if string_digit[index]=='0' and trailing:
+           index-=1
+           continue
+        else:
+            trailing=False
+            string_digit[index]=string_digit[i]
+            string_digit[i]=letter
+            i+=1
+            index-=1
+    return int(string_digit)
+            
 
 if __name__=='__main__':
-    digit=200
+    digit=2233456
     print(reverse_digit(digit))
