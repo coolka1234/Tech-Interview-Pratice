@@ -3,3 +3,7 @@ Languages:
 * Java
 * C++
 * Python
+Sources:
+* Geeks for geeks
+* Code wars
+* Problem of the day
