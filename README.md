@@ -2,7 +2,7 @@
 Languages:
 * Java
 * C++
-* Python
+* Python\
 Sources:
 * Geeks for geeks
 * Code wars
