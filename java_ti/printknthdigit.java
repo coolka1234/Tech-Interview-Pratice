@@ -39,3 +39,19 @@
 // Constraints:
 // 1 <= A,B <= 15
 // 1 <=K<= digits in AB
+package java_ti;
+/**
+ * printknthdigit
+ */
+public class printknthdigit {
+    public static void print(int digitA, int digitB){
+        double number=Math.pow(digitA, digitB);
+        for (double digit : number) {
+            
+        }
+    }
+
+    public static void main(String[] args) {
+        
+    }
+}
