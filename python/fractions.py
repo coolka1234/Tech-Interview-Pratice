@@ -27,5 +27,14 @@
 
 # # Note:The Input/Ouput format and Example given are used for system's internal purpose, and should be used by a user for Expected Output only. As it is a function problem, hence a user should not read any input from stdin/console. The task is to complete the function specified, and not to write the full code.
 def fractionize(num1, num2, den1, den2):
-    num=num1+num2
-    den=den1+den2 
+    up=num1*den2+num2*den1
+    down=den1*den2
+    for i in range(up):
+        if up%i==0 and down%i==0:
+            up=up/i
+            down=down/i
+    return f"{up}/{down}"
+    
+if __name__=='__main__':
+    n1, n2, d1, d2=4, 18, 27, 53
+    print(fractionize(n1,n2, d1, d2))
