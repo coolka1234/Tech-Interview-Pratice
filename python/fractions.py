@@ -36,5 +36,5 @@ def fractionize(num1, num2, den1, den2):
     return f"{up}/{down}"
     
 if __name__=='__main__':
-    n1, n2, d1, d2=4, 18, 27, 53
+    n1, n2, d1, d2=3, 6, 1500, 1500
     print(fractionize(n1,n2, d1, d2))
