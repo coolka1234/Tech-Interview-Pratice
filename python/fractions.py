@@ -29,7 +29,7 @@
 def fractionize(num1, num2, den1, den2):
     up=num1*den2+num2*den1
     down=den1*den2
-    for i in range(up):
+    for i in range(2, up):
         if up%i==0 and down%i==0:
             up=up/i
             down=down/i
