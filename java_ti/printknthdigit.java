@@ -47,7 +47,7 @@ public class printknthdigit {
     public static void print(int digitA, int digitB){
         double number=Math.pow(digitA, digitB);
         for (double digit : number) {
-            
+          
         }
     }
 
