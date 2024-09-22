@@ -27,9 +27,12 @@
 # Constraints:
 # 1 <= n <= 30
 # 1 <= m <= 109         
+
+
+
 def find_root(n, m):
-    for number in range(m):
-        if pow(n, number)==m:
+    for number in range(2, m, 1):
+        if pow(number, n)==m:
             return number
     return -1
 
