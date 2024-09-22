@@ -28,11 +28,11 @@
 # 1 <= n <= 30
 # 1 <= m <= 109         
 def find_root(n, m):
-    for number in m:
+    for number in range(m):
         if pow(n, number)==m:
             return number
     return -1
 
 if __name__=='__main__':
     n, m=2, 9
-    print(find_root())
+    print(find_root(n, m))
