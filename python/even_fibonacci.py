@@ -32,5 +32,5 @@ def even_fibonacci(n):
 
 
 if __name__=='__main__':
-    n=12
+    n=8
     print(even_fibonacci(n))
