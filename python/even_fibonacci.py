@@ -17,3 +17,20 @@
 
 # Your Task:  
 # You dont need to read input or print anything. Complete the function nthEvenFibonacci() which takes S as input parameter and returns the Nth even fibonacci number.
+def even_fibonacci(n):
+    counter=0
+    f1=1
+    f2=1
+    while counter<n:
+        old_f2=f2
+        f2=f1+f2
+        f1=old_f2
+        if f2%2==0:
+            counter+=1
+    return f2%1000000007
+
+
+
+if __name__=='__main__':
+    n=12
+    print(even_fibonacci(n))
