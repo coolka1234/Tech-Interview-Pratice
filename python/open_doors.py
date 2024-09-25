@@ -52,12 +52,12 @@ def num_of_open(n):
     for i in range(n):
         k=1
         while k*coef<n:
-            if the_doors[k*coef]:
+            if the_doors[(k*coef)-1]:
                 opened+=1
-                the_doors[k*coef]=False
+                the_doors[(k*coef)-1]=False
             else:
                 opened-=1
-                the_doors[k*coef]=True
+                the_doors[(k*coef)-1]=True
             k+=1
     return opened            
 
