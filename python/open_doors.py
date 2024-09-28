@@ -49,7 +49,7 @@ def num_of_open(n):
     the_doors=[True]*n
     coef=2
     opened=n
-    for i in range(n):
+    for _ in range(n):
         k=1
         while (k*coef)-1<n:
             if the_doors[(k*coef)-1]:
