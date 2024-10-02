@@ -17,15 +17,17 @@
 // 1 <= number of bits in binary number  <= 16
 #include <iostream>
 #include <string>
+#include <cmath>  
+
 int bin_to_dec(std::string dec){
     int result=0;
-    int pow=0;
+    int pow_k=0;
     for(int i=dec.size()-1;i>=0;i--)
     {
         if(dec[i]=='1'){
-            result+=2^pow;
+            result+=std::pow(2, pow_k);
         }
-        pow++;
+        pow_k++;
     }
     return result;
 
