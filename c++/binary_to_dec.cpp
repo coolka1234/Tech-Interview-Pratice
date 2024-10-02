@@ -25,7 +25,8 @@ int bin_to_dec(std::string dec){
     for(int i=dec.size()-1;i>=0;i--)
     {
         if(dec[i]=='1'){
-            result+=std::pow(2, pow_k);
+            result+=std::pow(2,pow_k);
+            std::cout<<result<<std::endl;
         }
         pow_k++;
     }
