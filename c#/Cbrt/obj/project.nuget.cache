@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kJIrGRylUleXjt3RNXLrwEWXRd62fpMQ/xffMRBZtPEXQllneHnp0a9FzzWki2he79CBvwrDZkqT94Db1U4iIQ==",
+  "success": true,
+  "projectFilePath": "/home/coolka/projects/c++/Interview Practice/c#/Cbrt/Cbrt.csproj",
+  "expectedPackageFiles": [
+    "/home/coolka/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.10/microsoft.aspnetcore.app.ref.8.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

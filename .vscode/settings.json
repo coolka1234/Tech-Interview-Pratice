@@ -1,5 +1,5 @@
 {
-    "dotnet.defaultSolution": "test1.sln",
+    "dotnet.defaultSolution": "Cbrt.sln",
     "files.associations": {
         "cmath": "cpp"
     }

@@ -1,0 +1,15 @@
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/bin/Debug/net8.0/Cbrt
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/bin/Debug/net8.0/Cbrt.deps.json
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/bin/Debug/net8.0/Cbrt.runtimeconfig.json
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/bin/Debug/net8.0/Cbrt.dll
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/bin/Debug/net8.0/Cbrt.pdb
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.GeneratedMSBuildEditorConfig.editorconfig
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.AssemblyInfoInputs.cache
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.AssemblyInfo.cs
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.csproj.CoreCompileInputs.cache
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.sourcelink.json
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.dll
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/refint/Cbrt.dll
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.pdb
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/Cbrt.genruntimeconfig.cache
+/home/coolka/projects/c++/Interview Practice/c#/Cbrt/obj/Debug/net8.0/ref/Cbrt.dll
