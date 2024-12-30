@@ -60,8 +60,10 @@ class MyBinaryTree{
 template <typename T>
 vector<T> MyBinaryTree<T>::bfs(){
     queue<T> bsfQueue;
+    vector<T> result;
     if(root.current!=NULL){
         bsfQueue.push(root.current);
+        result.push_back(root.current);
     }
     while(!bsfQueue.empty()){
 
