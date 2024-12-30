@@ -25,6 +25,7 @@ long long factorial(int n){
 
 }
 int main(){
-    std::cout<<factorial(5);
+    std::cout<<factorial(5)<<std::endl;
+    std::cout<<factorial(14);
     return 0;
 }

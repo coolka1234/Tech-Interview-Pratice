@@ -9,6 +9,7 @@ namespace Program{
                 for (int i = 0; i < arr.Length; i++){
                     Console.Write(arr[i] + " ");
                 }
+                
             }
         public static void printCbrt(int N){
             for (int i = 1; i <= N; i++){
