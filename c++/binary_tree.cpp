@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 template <typename T>
@@ -32,9 +33,42 @@ class MyBinaryTree{
         return;
     }
     else{
-
+        Node<T> currNode=root;
+        currNode.parent=nullptr;
+        currNode.current=arr[0];
+        currNode.left=nullptr;
+        currNode.right=nullptr;
+        Node<T>* leftMost=nullptr;
+        for (int i=1;i<s;i++){
+            if(currNode.left==nullptr){
+                *(currNode.left)->current=arr[i];
+                leftMost=currNode.left;
+            }
+            else if(currNode.right==nullptr){
+                *(currNode.right)->current=arr[i];
+            }
+            else if(currNode.parent!=nullptr && currNode.parent->right==nullptr){
+                *(currNode.parent->right)=arr[i];
+                currNode=* (currNode.parent->right);
+            }
+            else{
+                currNode=*leftMost;
+            }
+        }
     }    
  }
+template <typename T>
+vector<T> MyBinaryTree<T>::bfs(){
+    queue<T> bsfQueue;
+    if(root.current!=NULL){
+        bsfQueue.push(root.current);
+    }
+    while(!bsfQueue.empty()){
+
+    }
+
+
+}
 
 int main()
 {
