@@ -59,14 +59,29 @@ class MyBinaryTree{
  }
 template <typename T>
 vector<T> MyBinaryTree<T>::bfs(){
-    queue<T> bsfQueue;
+    queue<Node<T>> bsfQueue;
     vector<T> result;
     if(root.current!=NULL){
-        bsfQueue.push(root.current);
+        bsfQueue.push(root);
         result.push_back(root.current);
     }
     while(!bsfQueue.empty()){
-
+        Node<T> n=bsfQueue.front();
+        bsfQueue.pop();
+        if(n.left!=nullptr){
+        if(find(result.begin(), result.end(), *n.left)!=result.end()){
+            result.push_back(*n.left);
+            bsfQueue.push(*n.left)
+        }
+        }
+        if(n.right!=nullptr){
+        if(find(result.begin(), result.end(), *n.right)!=result.end()){
+            result.push_back(*n.right);
+            bsfQueue.push(*n.right)
+        }
+        }
+        
+        
     }
 
 
