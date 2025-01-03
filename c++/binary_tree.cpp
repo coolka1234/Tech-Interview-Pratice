@@ -3,20 +3,22 @@
 #include <queue>
 
 using namespace std;
-template <typename T>
-class Node{
-private:
-    Node<T> *parent;
-    T current;
-    Node<T> *left;
-    Node<T> *right;
-public:
-    Node<T>();
-    Node<T>(Node<T> *parent, Node<T> *left, Node<T>* right);
-};
 template <typename T> 
 class MyBinaryTree{
     private:
+    template <typename T>
+    class Node{
+    protected:
+        Node<T> *parent;
+        T current;
+        Node<T> *left;
+        Node<T> *right;
+    public:
+        Node<T>();
+        Node<T>(Node<T> *parent, Node<T> *left, Node<T>* right);
+        friend class MyBinaryTree;
+    };
+
     Node<T> root;
     public:
     MyBinaryTree();
@@ -71,13 +73,13 @@ vector<T> MyBinaryTree<T>::bfs(){
         if(n.left!=nullptr){
         if(find(result.begin(), result.end(), *n.left)!=result.end()){
             result.push_back(*n.left);
-            bsfQueue.push(*n.left)
+            bsfQueue.push(*n.left);
         }
         }
         if(n.right!=nullptr){
         if(find(result.begin(), result.end(), *n.right)!=result.end()){
             result.push_back(*n.right);
-            bsfQueue.push(*n.right)
+            bsfQueue.push(*n.right);
         }
         }
         
@@ -89,5 +91,7 @@ vector<T> MyBinaryTree<T>::bfs(){
 
 int main()
 {
+    int arr[9]={1,2,3,4,5,6,7,8,9};
+    MyBinaryTree<int> tree=MyBinaryTree<int>(arr, 9);
     return 0;
 }
