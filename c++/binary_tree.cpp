@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 template <typename K> 
@@ -38,6 +39,8 @@ class MyBinaryTree{
  MyBinaryTree<K>::Node::Node(Node* parent, K elem){
     current=elem;
     this->parent=parent;
+    this->left=nullptr;
+    this->right=nullptr;
  }
 
  template <typename K>
@@ -97,16 +100,17 @@ vector<K> MyBinaryTree<K>::bfs(){
     }
     while(!bsfQueue.empty()){
         Node n=bsfQueue.front();
+        cout<<"node inspected:"<<n.current<<endl;
         bsfQueue.pop();
         if(n.left!=nullptr){
-            if(find(result.begin(), result.end(), *n.left)!=result.end()){
-                result.push_back(*n.left);
+            if(find(result.begin(), result.end(), ((n.left)->current))!=result.end()){
+                result.push_back((n.left)->current);
                 bsfQueue.push(*n.left);
             }
         }
         if(n.right!=nullptr){
-            if(find(result.begin(), result.end(), *n.right)!=result.end()){
-                result.push_back(*n.right);
+            if(find(result.begin(), result.end(), (n.right)->current)!=result.end()){
+                result.push_back((n.right)->current);
                 bsfQueue.push(*n.right);
             }
         }
