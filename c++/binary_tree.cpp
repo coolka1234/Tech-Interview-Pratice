@@ -15,6 +15,7 @@ class MyBinaryTree{
     public:
         Node();
         Node(Node *parent, Node *left, Node* right);
+        Node(Node *parent, K elem);
         friend class MyBinaryTree;
     };
 
@@ -33,6 +34,11 @@ class MyBinaryTree{
     this->left=nullptr;
     this->right=nullptr;
  }
+ template <typename K>
+ MyBinaryTree<K>::Node::Node(Node* parent, K elem){
+    current=elem;
+    this->parent=parent;
+ }
 
  template <typename K>
  MyBinaryTree<K>::MyBinaryTree(K arr[], int s){
@@ -47,20 +53,35 @@ class MyBinaryTree{
         currNode.left=nullptr;
         currNode.right=nullptr;
         MyBinaryTree::Node* leftMost=nullptr;
+        int level=0;
+        int maxlevel=-1;
         for (int i=1;i<s;i++){
+            Node *currPtr=&currNode;
+            cout<<currNode.current<<endl;
             if(currNode.left==nullptr){
-                (currNode.left)->current=arr[i];
-                leftMost=currNode.left;
+                Node newNode=Node(currPtr, arr[i]);
+                Node *nptr=&newNode;
+                currNode.left=nptr;
+                if(level>maxlevel){
+                    leftMost=currNode.left;
+                    maxlevel=level;
+                }
             }
             else if(currNode.right==nullptr){
-                (currNode.right)->current=arr[i];
+                Node newNode=Node(currPtr, arr[i]);
+                Node *nptr=&newNode;
+                currNode.right=nptr;
             }
             else if(currNode.parent!=nullptr && currNode.parent->right==nullptr){
-                (currNode.parent->right)->current=arr[i];
+                Node newNode=Node(currNode.parent, arr[i]);
+                Node *ndptr=&newNode;
+                (currNode.parent->right)=ndptr;
                 currNode=* (currNode.parent->right);
+                level--;
             }
             else{
                 currNode=*leftMost;
+                level++;
             }
         }
     }    
@@ -78,21 +99,20 @@ vector<K> MyBinaryTree<K>::bfs(){
         Node n=bsfQueue.front();
         bsfQueue.pop();
         if(n.left!=nullptr){
-        if(find(result.begin(), result.end(), *n.left)!=result.end()){
-            result.push_back(*n.left);
-            bsfQueue.push(*n.left);
-        }
+            if(find(result.begin(), result.end(), *n.left)!=result.end()){
+                result.push_back(*n.left);
+                bsfQueue.push(*n.left);
+            }
         }
         if(n.right!=nullptr){
-        if(find(result.begin(), result.end(), *n.right)!=result.end()){
-            result.push_back(*n.right);
-            bsfQueue.push(*n.right);
+            if(find(result.begin(), result.end(), *n.right)!=result.end()){
+                result.push_back(*n.right);
+                bsfQueue.push(*n.right);
+            }
         }
-        }
-        
         
     }
-
+    return result;
 
 }
 
@@ -101,5 +121,9 @@ int main()
     int arr[9]={1,2,3,4,5,6,7,8,9};
     cout<<"main"<<endl;
     MyBinaryTree<int> tree=MyBinaryTree<int>(arr, 9);
+    vector<int> result=tree.bfs();
+    for(int i=0;i<result.size();i++){
+        cout<<result[i]<<endl;
+    }
     return 0;
 }

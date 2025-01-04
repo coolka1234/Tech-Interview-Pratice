@@ -1,6 +1,27 @@
 {
     "dotnet.defaultSolution": "Cbrt.sln",
     "files.associations": {
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "*.tcc": "cpp",
+        "chrono": "cpp",
+        "exception": "cpp",
+        "memory_resource": "cpp",
+        "format": "cpp",
+        "fstream": "cpp",
+        "istream": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "stop_token": "cpp",
+        "streambuf": "cpp",
+        "valarray": "cpp",
+        "__hash_table": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "iterator": "cpp",
+        "string": "cpp"
     }
 }
