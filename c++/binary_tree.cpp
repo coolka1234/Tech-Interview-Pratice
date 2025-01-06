@@ -6,23 +6,23 @@
 using namespace std;
 template <typename K> 
 class MyBinaryTree{
-    private:
+    public:
     class Node{
-    protected:
+    public:
         Node *parent;
         K current;
         Node *left;
         Node *right;
-    public:
         Node();
         Node(Node *parent, Node *left, Node* right);
         Node(Node *parent, K elem);
+        Node(K elem);
         friend class MyBinaryTree;
     };
 
     Node root;
-    public:
     MyBinaryTree();
+    MyBinaryTree(Node root);
     MyBinaryTree(K arr[], int s);
     MyBinaryTree(vector<K> vec);
     void add(K elem);
@@ -36,11 +36,19 @@ class MyBinaryTree{
     this->right=nullptr;
  }
  template <typename K>
+ MyBinaryTree<K>::Node::Node(K elem){
+    current=elem;
+ }
+ template <typename K>
  MyBinaryTree<K>::Node::Node(Node* parent, K elem){
     current=elem;
     this->parent=parent;
     this->left=nullptr;
     this->right=nullptr;
+ }
+ template <typename K>
+ MyBinaryTree<K>::MyBinaryTree(Node root){
+    this->root=root;
  }
 
  template <typename K>
@@ -124,8 +132,14 @@ int main()
 {
     int arr[9]={1,2,3,4,5,6,7,8,9};
     cout<<"main"<<endl;
-    MyBinaryTree<int> tree=MyBinaryTree<int>(arr, 9);
-    vector<int> result=tree.bfs();
+    // MyBinaryTree<int> tree=MyBinaryTree<int>(arr, 9);
+    // vector<int> result=tree.bfs();
+    MyBinaryTree<int>::Node root = MyBinaryTree<int>::Node(nullptr, 3);
+    MyBinaryTree<int> tree=MyBinaryTree<int>(root);
+    MyBinaryTree<int>::Node *r_left= &(MyBinaryTree<int>::Node(&root, 5));
+    MyBinaryTree<int>::Node *r_right= &(MyBinaryTree<int>::Node(&root, 7));
+    MyBinaryTree<int>::Node *l_r_left=&(MyBinaryTree<int>::Node(r_left, 9));
+    MyBinaryTree<int>::Node *r_r_right=&(MyBinaryTree<int>::Node(r_right, 11));
     for(int i=0;i<result.size();i++){
         cout<<result[i]<<endl;
     }
