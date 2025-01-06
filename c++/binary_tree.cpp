@@ -111,13 +111,15 @@ vector<K> MyBinaryTree<K>::bfs(){
         cout<<"node inspected:"<<n.current<<endl;
         bsfQueue.pop();
         if(n.left!=nullptr){
-            if(find(result.begin(), result.end(), ((n.left)->current))!=result.end()){
+            cout<<"going left"<<endl;
+            if(find(result.begin(), result.end(), ((n.left)->current))==result.end()){
                 result.push_back((n.left)->current);
                 bsfQueue.push(*n.left);
             }
         }
         if(n.right!=nullptr){
-            if(find(result.begin(), result.end(), (n.right)->current)!=result.end()){
+            cout<<"going right"<<endl;
+            if(find(result.begin(), result.end(), (n.right)->current)==result.end()){
                 result.push_back((n.right)->current);
                 bsfQueue.push(*n.right);
             }
@@ -133,13 +135,17 @@ int main()
     int arr[9]={1,2,3,4,5,6,7,8,9};
     cout<<"main"<<endl;
     // MyBinaryTree<int> tree=MyBinaryTree<int>(arr, 9);
-    // vector<int> result=tree.bfs();
     MyBinaryTree<int>::Node root = MyBinaryTree<int>::Node(nullptr, 3);
+    MyBinaryTree<int>::Node r_left= (MyBinaryTree<int>::Node(&root, 5));
+    MyBinaryTree<int>::Node r_right= (MyBinaryTree<int>::Node(&root, 7));
+    MyBinaryTree<int>::Node l_r_left=(MyBinaryTree<int>::Node(&r_left, 9));
+    MyBinaryTree<int>::Node r_r_right=(MyBinaryTree<int>::Node(&r_right, 11));
+    root.left=&r_left;
+    root.right=&r_right;
+    r_left.left=&l_r_left;
+    r_right.right=&r_r_right;
     MyBinaryTree<int> tree=MyBinaryTree<int>(root);
-    MyBinaryTree<int>::Node *r_left= &(MyBinaryTree<int>::Node(&root, 5));
-    MyBinaryTree<int>::Node *r_right= &(MyBinaryTree<int>::Node(&root, 7));
-    MyBinaryTree<int>::Node *l_r_left=&(MyBinaryTree<int>::Node(r_left, 9));
-    MyBinaryTree<int>::Node *r_r_right=&(MyBinaryTree<int>::Node(r_right, 11));
+    vector<int> result=tree.bfs();
     for(int i=0;i<result.size();i++){
         cout<<result[i]<<endl;
     }
