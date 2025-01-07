@@ -46,4 +46,7 @@ def last_two_dig(n):
     sec_last=0
     return n % 100 
 
-print(last_two_dig(calc_fib(33)))
+def last_two_dig_diff(n):
+    return str(n)[:-2]
+
+print(last_two_dig_diff(calc_fib(33)))
