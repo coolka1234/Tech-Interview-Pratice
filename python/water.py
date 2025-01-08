@@ -5,13 +5,19 @@ def calc_water(arr):
     last_barricade=0
     total_water=0
     potential_water=0
+    over_water=0
     for block in arr:
         if block<last_barricade:
             potential_water+=last_barricade-block
+            over_water+=1
         else:
             last_barricade=block
             total_water+=potential_water
+            potential_water=0
+            over_water=0
+    if over_water>0:
+        total_water-=(over_water*(last_barricade-arr[-1]))        
     return total_water
 
 arr=[3, 0, 1, 0, 4, 0, 2]
-print()
+print(calc_water(arr))
