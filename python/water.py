@@ -17,7 +17,8 @@ def calc_water(arr):
             over_water=0
     if over_water>0:
         total_water-=(over_water*(last_barricade-arr[-1]))        
+        total_water+=potential_water
     return total_water
 
-arr=[3, 0, 1, 0, 4, 0, 2]
+arr=[1,2,3,4]
 print(calc_water(arr))
