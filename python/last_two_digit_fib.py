@@ -47,6 +47,6 @@ def last_two_dig(n):
     return n % 100 
 
 def last_two_dig_diff(n):
-    return str(n)[:-2]
+    return str(n)[-2:]
 
 print(last_two_dig_diff(calc_fib(33)))
