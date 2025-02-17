@@ -24,14 +24,15 @@ def justify(words, maxWidth) -> List[str]:
         words_in_sen=[]
         k=0
         last_sentence=False
-        while sen_len< maxWidth:
+        while sen_len+len(words[total_words])< maxWidth:
             words_in_sen.insert(k, words[total_words])
-            sen_len+=len(words[total_words])
+            sen_len+=len(words_in_sen[total_words])+1
             if len(words)==total_words:
                 last_sentence=True
+                break
             else:
                 total_words+=1
-            break
+            k+=1
         spaces=maxWidth-sen_len
         i=0
         if len(words_in_sen)==1:
@@ -47,17 +48,20 @@ def justify(words, maxWidth) -> List[str]:
                 i+=1
         else: 
             word_num=1
-            single_gap=spaces/(len(words_in_sen)-1)
+            i=0
+            k=0
+            single_gap=spaces//(len(words_in_sen)-1)
             overflow=spaces%(len(words_in_sen)-1)
             while sen_len!=maxWidth:
                 sentence+=words_in_sen[i]
+                if(i==len(words_in_sen)-1): break
                 for k in range(single_gap):
-                    sentence+=words_in_sen[i]
                     sentence+=" "
                     if overflow>0:
                         sentence+=" "
                         overflow-=1
-                    i+=1
+                i+=1
+                sen_len=len(sentence)
         result+=sentence
     return result
     
