@@ -7,7 +7,29 @@
 # Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 
 def remove_duplicates(array):
-    pass
+    duplicates=0
+    prev=None
+    size_of_arr=len(array)
+    eleme_num=0
+    while eleme_num < size_of_arr:
+        if array[eleme_num]==prev:
+            duplicates+=1
+        else:
+            duplicates=0
+        prev=array[eleme_num]
+        if duplicates>=2:
+            j=eleme_num
+            while j < size_of_arr-1:
+                array[j]=array[j+1]
+                j+=1
+            eleme_num-=1
+            del array[-1:]
+            size_of_arr-=1
+        eleme_num+=1
+    return array
+
+
+
 
 if __name__ == '__main__':
     print(remove_duplicates([1,1,1,2,2,3])) # 5
