@@ -16,7 +16,6 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
             j+=1
         k+=1
     print(res)
-    print("completed")
 
 if __name__ == '__main__':
     merge([1,2,3,0,0,0],3,[2,5,6],3)
