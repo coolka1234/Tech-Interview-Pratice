@@ -15,50 +15,57 @@
 from ast import JoinedStr
 from typing import List
 
-def justify(words_in_sen, maxWidth) -> List[str]:
-    sentence=""
-    sen_len=0
-    words_in_sen=[]
-    k=0
-    i=0
-    last_sentence=False
-    while sen_len< maxWidth:
-        words_in_sen.insert(k, words[i])
-        sen_len+=len(words[i])
-        if len(words)==i:
-            last_sentence=True
-        else:
-            i+=1
-        break
-
-    spaces=maxWidth-sen_len
-    i=0
-    if len(words_in_sen)==1:
-        sentence=words_in_sen[0]
-        while len(sentence)<maxWidth:
-            sentence+=" "
-    elif last_sentence:
-        while len(sentence)<maxWidth:
-            if(i>len(words_in_sen)):
-                sentence+=" "
+def justify(words, maxWidth) -> List[str]:
+    result : List[str] = [] 
+    total_words=0
+    while total_words< len(words):
+        sentence=""
+        sen_len=0
+        words_in_sen=[]
+        k=0
+        last_sentence=False
+        while sen_len< maxWidth:
+            words_in_sen.insert(k, words[total_words])
+            sen_len+=len(words[total_words])
+            if len(words)==total_words:
+                last_sentence=True
             else:
-                sentence+=words_in_sen[i]+" "
-            i+=1
-    else: 
-        word_num=1
-        single_gap=spaces/(len(words_in_sen)-1)
-        overflow=spaces%(len(words_in_sen)-1)
-        while sen_len!=maxWidth:
-            sentence+=words_in_sen[i]
-            for i in range(single_gap):
+                total_words+=1
+            break
+        spaces=maxWidth-sen_len
+        i=0
+        if len(words_in_sen)==1:
+            sentence=words_in_sen[0]
+            while len(sentence)<maxWidth:
                 sentence+=" "
-                if overflow>0:
-                    sentence+=1
-                    overflow-=1
+        elif last_sentence:
+            while len(sentence)<maxWidth:
+                if(i>len(words_in_sen)):
+                    sentence+=" "
+                else:
+                    sentence+=words_in_sen[i]+" "
+                i+=1
+        else: 
+            word_num=1
+            single_gap=spaces/(len(words_in_sen)-1)
+            overflow=spaces%(len(words_in_sen)-1)
+            while sen_len!=maxWidth:
+                sentence+=words_in_sen[i]
+                for k in range(single_gap):
+                    sentence+=words_in_sen[i]
+                    sentence+=" "
+                    if overflow>0:
+                        sentence+=" "
+                        overflow-=1
+                    i+=1
+        result+=sentence
+    return result
+    
 
 
 
 
 if __name__=="__main__":
-    words = ["This", "is", "an", "example", "of", "text", "justification."], maxWidth = 16
+    words = ["This", "is", "an", "example", "of", "text", "justification."]
+    maxWidth = 16
     print(justify(words, maxWidth))    
