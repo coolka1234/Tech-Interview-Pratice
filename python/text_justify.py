@@ -16,7 +16,7 @@ from ast import JoinedStr
 from typing import List
 
 def justify(words, maxWidth) -> List[str]:
-    result : List[str] = [] 
+    result = [] 
     total_words=0
     while total_words< len(words):
         sentence=""
@@ -24,16 +24,21 @@ def justify(words, maxWidth) -> List[str]:
         words_in_sen=[]
         k=0
         last_sentence=False
-        while sen_len+len(words[total_words])< maxWidth:
+        while sen_len+len(words[total_words])<= maxWidth:
             words_in_sen.insert(k, words[total_words])
-            sen_len+=len(words_in_sen[total_words])+1
-            if len(words)==total_words:
+            sen_len+=len(words[total_words])+1
+            if len(words)-1==total_words:
                 last_sentence=True
+                total_words+=1
                 break
             else:
                 total_words+=1
             k+=1
-        spaces=maxWidth-sen_len
+        # last word doesnt have a space
+        sen_len-=1
+        # raw number of spaces
+        non_space_sen_len=sum(len(s) for s in words_in_sen) 
+        spaces=maxWidth-non_space_sen_len
         i=0
         if len(words_in_sen)==1:
             sentence=words_in_sen[0]
@@ -41,7 +46,7 @@ def justify(words, maxWidth) -> List[str]:
                 sentence+=" "
         elif last_sentence:
             while len(sentence)<maxWidth:
-                if(i>len(words_in_sen)):
+                if(i>=len(words_in_sen)):
                     sentence+=" "
                 else:
                     sentence+=words_in_sen[i]+" "
@@ -52,6 +57,7 @@ def justify(words, maxWidth) -> List[str]:
             k=0
             single_gap=spaces//(len(words_in_sen)-1)
             overflow=spaces%(len(words_in_sen)-1)
+            sen_len=0
             while sen_len!=maxWidth:
                 sentence+=words_in_sen[i]
                 if(i==len(words_in_sen)-1): break
@@ -62,7 +68,7 @@ def justify(words, maxWidth) -> List[str]:
                         overflow-=1
                 i+=1
                 sen_len=len(sentence)
-        result+=sentence
+        result.append(sentence)
     return result
     
 
@@ -71,5 +77,7 @@ def justify(words, maxWidth) -> List[str]:
 
 if __name__=="__main__":
     words = ["This", "is", "an", "example", "of", "text", "justification."]
-    maxWidth = 16
+    words=["What","must","be","acknowledgment","shall","be"]
+    words = ["Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"]
+    maxWidth = 20
     print(justify(words, maxWidth))    
