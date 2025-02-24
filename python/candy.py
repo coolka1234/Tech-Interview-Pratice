@@ -12,7 +12,7 @@ def distribute_candy(children_ratings)->int:
     prev_child_reward=0
     total_candies=0
     i=0
-    for child in enumerate(i,children_ratings):
+    for child, i in enumerate(children_ratings, i):
         current_handout=0
         if i+1<len(children_ratings):
             if child>prev_child and child>children_ratings[i+1]:
@@ -22,9 +22,13 @@ def distribute_candy(children_ratings)->int:
                 total_candies+=1
                 current_handout=1
         elif child>prev_child:
+            total_candies+=prev_child_reward+1
+            current_handout=prev_child_reward+1
+        else:
             total_candies+=1
             current_handout=1
         prev_child_reward=current_handout
+    return total_candies
             
         
 
