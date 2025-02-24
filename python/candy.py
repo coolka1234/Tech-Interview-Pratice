@@ -1,0 +1,35 @@
+# There are n children standing in a line. Each child is assigned a rating value given in the integer array ratings.
+
+# You are giving candies to these children subjected to the following requirements:
+
+#     Each child must have at least one candy.
+#     Children with a higher rating get more candies than their neighbors.
+
+# Return the minimum number of candies you need to have to distribute the candies to the children.
+
+def distribute_candy(children_ratings)->int:
+    prev_child=0
+    prev_child_reward=0
+    total_candies=0
+    i=0
+    for child in enumerate(i,children_ratings):
+        current_handout=0
+        if i+1<len(children_ratings):
+            if child>prev_child and child>children_ratings[i+1]:
+               total_candies+=prev_child_reward+1
+               current_handout=prev_child_reward+1
+            else:
+                total_candies+=1
+                current_handout=1
+        elif child>prev_child:
+            total_candies+=1
+            current_handout=1
+        prev_child_reward=current_handout
+            
+        
+
+if __name__=='__main__':
+    children_ratings=[1, 0, 2]
+    print(distribute_candy(children_ratings=children_ratings))
+
+ 
