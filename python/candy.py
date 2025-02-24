@@ -28,6 +28,7 @@ def distribute_candy(children_ratings)->int:
             total_candies+=1
             current_handout=1
         prev_child_reward=current_handout
+        print(f"{i} handout {current_handout}")
     return total_candies
             
         
