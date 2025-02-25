@@ -8,12 +8,19 @@
 # Return the minimum number of candies you need to have to distribute the candies to the children.
 
 def distribute_candy(children_ratings)->int:
+    if(len(children_ratings)==1):
+        return 1
     prev_child=0
     prev_child_reward=0
     total_candies=0
+    first_child=False
     i=0
     for child, i in enumerate(children_ratings, i):
         current_handout=0
+        if first_child:
+            if(children_ratings[0]>children_ratings[1]):
+                current_handout=2
+                total_candies+=2
         if i+1<len(children_ratings):
             if child>prev_child and child>children_ratings[i+1]:
                total_candies+=prev_child_reward+1
