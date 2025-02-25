@@ -46,7 +46,7 @@ def distribute_candy(children_ratings)->int:
         
 
 if __name__=='__main__':
-    children_ratings=[1, 0, 2]
+    children_ratings=[1, 2, 2]
     print(distribute_candy(children_ratings=children_ratings))
 
  
