@@ -26,7 +26,7 @@ def distribute_candy(children_ratings)->int:
                 total_candies+=1
                 first_child=False
         elif i+1<len(children_ratings):
-            if child>prev_child and child>children_ratings[i+1]:
+            if child>prev_child or child>children_ratings[i+1]:
                total_candies+=prev_child_reward+1
                current_handout=prev_child_reward+1
             else:
@@ -46,7 +46,7 @@ def distribute_candy(children_ratings)->int:
         
 
 if __name__=='__main__':
-    children_ratings=[1, 2, 2]
+    children_ratings=[1, 0, 2]
     print(distribute_candy(children_ratings=children_ratings))
 
  
