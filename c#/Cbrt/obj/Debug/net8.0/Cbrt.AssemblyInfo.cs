@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cbrt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fee035e9e18fb9947b5dc397c42aa27dac818aca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b62fed67ada8fdbe56669666c2bdc58bb5aa366")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cbrt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cbrt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

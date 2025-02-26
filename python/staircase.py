@@ -28,5 +28,8 @@ def start_function(possible_steps, num_of_steps, steps_so_far=[])->list[list]:
         result.append(stairs(num_of_setps=num_of_steps,possible_steps=possible_steps, steps_so_far=steps_so_far+[step], answers_found=[]))
     return list(filter(lambda x: x!=[],result))
 
+def test():
+    pass
+
 if __name__=='__main__':
     print(start_function(possible_steps=[1,2],num_of_steps=4,steps_so_far=[]))
