@@ -38,6 +38,15 @@ def sum_without_op(a, b):
                 sum=''.join(('1', sum))
     return int(sum, 2)
 
+def sum_without_op_optimally(a, b):
+    MASK = 0xFFFFFFFF 
+    while b != 0:
+        carry = (a & b) << 1   
+        a = (a ^ b) & MASK    
+        b = carry & MASK     
+
+    return a if a <= 0x7FFFFFFF else ~(a ^ MASK)
+
 a, b = 102, 1207102983
 print(sum_without_op(a,b))
 
