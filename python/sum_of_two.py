@@ -4,35 +4,41 @@ def sum_without_op(a, b):
     def to_binary(num):
         return bin(num)
     a, b = to_binary(a), to_binary(b)
+    b=b[2:]
+    a=a[2:]
     if len(a)>len(b):
         a, b = b, a
-    bigger_len=len(a)
-    smaller_len=len(b)
+    bigger_len=len(b)
+    smaller_len=len(a)
+    print(f'{smaller_len}, {bigger_len}, {a}, {b}')
     while smaller_len < bigger_len:
-        ''.join(('0', b))
+        a=''.join(('0', a))
+        smaller_len+=1
     carry=0
     sum=""
-    for j in range(bigger_len, -1, -1):
-        if carry==1:
+    print(f'{smaller_len}, {bigger_len}, {a}, {b}')
+    for j in range(bigger_len-1, -1, -1):
+        if carry==0:
             if a[j]=='0' and b[j]=='0':
-                ''.join(('0', sum))
-            elif (a[j]=='0' and b[j]=='1') or (a[j]=='0' and b[j] == '0'):
-                ''.join(('1', sum))
+                sum=''.join(('0', sum))
+            elif (a[j]=='0' and b[j]=='1') or (a[j]=='1' and b[j] == '0'):
+                sum=''.join(('1', sum))
             else:
-                ''.join(('0', sum))
+                sum=''.join(('0', sum))
                 carry=1
         else:
             if a[j]=='0' and b[j]=='0':
-                ''.join(('1', sum))
-            elif (a[j]=='0' and b[j]=='1') or (a[j]=='0' and b[j] == '0'):
+                sum=''.join(('1', sum))
+                carry=0
+            elif (a[j]=='0' and b[j]=='1') or (a[j]=='1' and b[j] == '0'):
                 carry=1
-                ''.join(('0', sum))
+                sum=''.join(('0', sum))
             else:
                 carry=1
-                ''.join(('1', sum))
-    return sum
+                sum=''.join(('1', sum))
+    return int(sum, 2)
 
-a, b = 102, 1029
+a, b = 102, 1207102983
 print(sum_without_op(a,b))
 
 
