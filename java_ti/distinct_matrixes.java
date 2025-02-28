@@ -63,6 +63,7 @@ class distinct_matrixes {
                 else{
                     if(set_of_num.contains(element)){
                         next_sum.add(element);
+                        
                     }
                 }
             }

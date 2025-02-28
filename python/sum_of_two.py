@@ -38,6 +38,7 @@ def sum_without_op(a, b):
                 sum=''.join(('1', sum))
     return int(sum, 2)
 
+# TODO : Poważna analiza
 def sum_without_op_optimally(a, b):
     MASK = 0xFFFFFFFF 
     while b != 0:
