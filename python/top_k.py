@@ -4,6 +4,7 @@ import heapq
 
 def top_k_frequent(nums, k):
     freq_map = Counter(nums)
+    print(freq_map)
     return [item[0] for item in heapq.nlargest(k, freq_map.items(), key=lambda x: x[1])]
 
 
