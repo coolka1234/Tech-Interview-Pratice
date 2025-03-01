@@ -9,7 +9,6 @@
 def insert_interval(intervals, new_interval):
     def is_included(interval, sec_interval):
         return (interval[0]>=sec_interval[0] and interval[1]<=sec_interval[1])
-
     result=[]
     for interval in intervals:
         print(f'{interval} with new {new_interval}')
