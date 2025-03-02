@@ -34,6 +34,33 @@ class BinaryTree():
             if (inspected.right is not None):
                 que.put(inspected.right)
         return str(result)
+    def bfs(self):
+        result=[]
+        que=queue.Queue()
+        que.put(self.root)
+        while not que.empty():
+            inspected=que.get()
+            result.append(inspected.value)
+            if (inspected.left is not None):
+                que.put(inspected.left)
+            if (inspected.right is not None):
+                que.put(inspected.right)
+        return result
+    def invert(self):
+        que=queue.Queue()
+        que.put(self.root)
+        while not que.empty(): 
+            current=que.get()
+            current.left, current.right = current.right, current.left
+            if(current.left is not None):
+                que.put(current.left)
+            if(current.right is not None):
+               que.put(current.right)
+
+
+    def is_same(self, other):
+        return self.bfs() == other.bfs()
+
 
 
 n1=Node(None, None, 1)
@@ -44,6 +71,18 @@ n5=Node(n1, n2, 5)
 n6=Node(n4, n3, 6)
 root=Node(n5,n6, 7)
 b_tree=BinaryTree(root)
+
+n1=Node(None, None, 1)
+n2=Node(None, None, 3)
+n3=Node(None, None, 3)
+n4=Node(None, None, 4)
+n5=Node(n1, n2, 5)
+n6=Node(n4, n3, 8)
+root=Node(n5,n6, 7)
+b2_tree=BinaryTree(root)
+print(str(b_tree))
+
+b_tree.invert()
 
 print(str(b_tree))
 
