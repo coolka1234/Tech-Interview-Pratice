@@ -86,4 +86,5 @@ b_tree.invert()
 
 print(str(b_tree))
 
+print(b_tree.is_same(b2_tree))
 
