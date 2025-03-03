@@ -46,6 +46,32 @@ class BinaryTree():
             if (inspected.right is not None):
                 que.put(inspected.right)
         return result
+    def dfs(self):
+        def visit_node(node: Node, visited: set, result):
+            if node.left is not None and node.left not in visited:
+                visited.add(node.left)
+                result.append(node.left.value)
+                visit_node(node.left, visited, result)
+            if node.right is not None and node.right not in visited:
+                visited.add(node.right)
+                result.append(node.right.value)
+                visit_node(node.right, visited, result)
+        result=[]
+        visited=set()
+        result.append(self.root.value)
+        visited.add(self.root)
+        if self.root.left is not None:
+            result.append(self.root.left.value)
+            visited.add(self.root.left)
+            visit_node(self.root.left, visited, result)
+        if self.root.right is not None:
+            result.append(self.root.right.value)
+            visited.add(self.root.right)
+            visit_node(self.root.right, visited, result)
+        return result
+
+
+
     def invert(self):
         que=queue.Queue()
         que.put(self.root)
@@ -80,11 +106,13 @@ n5=Node(n1, n2, 5)
 n6=Node(n4, n3, 8)
 root=Node(n5,n6, 7)
 b2_tree=BinaryTree(root)
-print(str(b_tree))
+# print(str(b_tree))
 
-b_tree.invert()
+# b_tree.invert()
 
-print(str(b_tree))
+# print(str(b_tree))
 
-print(b_tree.is_same(b2_tree))
+# print(b_tree.is_same(b_tree))
+# print(b2_tree.dfs())
+print(b_tree.dfs())
 
