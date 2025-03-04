@@ -27,8 +27,9 @@ def ways_to_climb(n):
             print("found")
             return
         climb(result, n, counter+2)
+        return result
     counter=0
-    climb(result, n, counter)
+    result=climb(result, n, counter)
     return result
 
 
