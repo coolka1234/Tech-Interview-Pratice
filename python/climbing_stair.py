@@ -13,6 +13,7 @@
 # 2. 2 steps
 global result
 
+
 def ways_to_climb(n):
     result=0
     def climb(result, n, counter):
@@ -27,11 +28,23 @@ def ways_to_climb(n):
             print("found")
             return
         climb(result, n, counter+2)
-        return result
     counter=0
-    result=climb(result, n, counter)
+    climb(result, n, counter)
     return result
 
+def ways_to_climb_2(n):
+    def climb(counter):
+        if counter == n:
+            return 1  # Found a valid way
+        if counter > n:
+            return 0  # Exceeded steps, not a valid path
+        return climb(counter + 1) + climb(counter + 2)  # Sum all paths
+
+    return climb(0)
+
+
+n = 5
+print(ways_to_climb(n))  # Output: 8
 
 n=5
 print(ways_to_climb(n))
