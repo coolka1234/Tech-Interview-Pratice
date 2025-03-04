@@ -35,11 +35,10 @@ def ways_to_climb(n):
 def ways_to_climb_2(n):
     def climb(counter):
         if counter == n:
-            return 1  # Found a valid way
+            return 1  
         if counter > n:
-            return 0  # Exceeded steps, not a valid path
-        return climb(counter + 1) + climb(counter + 2)  # Sum all paths
-
+            return 0  
+        return climb(counter + 1) + climb(counter + 2)  
     return climb(0)
 
 
