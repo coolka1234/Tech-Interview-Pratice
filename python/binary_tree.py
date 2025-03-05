@@ -8,6 +8,7 @@
 # Input: root = [4,2,7,1,3,6,9]
 # Output: [4,7,2,9,6,3,1]
 import queue
+from collections import deque
 
 class Node():
     def __init__(self, right, left, value):
@@ -69,6 +70,25 @@ class BinaryTree():
             visited.add(self.root.right)
             visit_node(self.root.right, visited, result)
         return result
+
+    def is_bst(self):
+        if not self.root:
+            return True
+        que=deque([(self.root, float("-inf"), float("inf"))])
+        while que:
+            node, min_val, max_val=que.popleft()
+
+            if not min_val < node.value < max_val:
+                return False
+
+            if node.left:
+                que.append((node.left, min_val, node.value))
+            if node.right:
+                que.append((node.right, node.value, max_val))
+
+        return True
+
+            
 
 
 
