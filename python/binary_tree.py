@@ -88,6 +88,15 @@ class BinaryTree():
 
         return True
 
+    def max_depth(self):
+        def go_down(node, value)->int:
+            if not node:
+                return 0
+            return 1 + max(go_down(node.left, value+1),go_down(node.right, value+1))
+        depth=0
+        if self.root:
+            depth=max(go_down(self.root.left, 1), go_down(self.root.right, 1))
+        return depth
             
 
 
@@ -134,5 +143,5 @@ b2_tree=BinaryTree(root)
 
 # print(b_tree.is_same(b_tree))
 # print(b2_tree.dfs())
-print(b_tree.dfs())
+print(b_tree.max_depth())
 
